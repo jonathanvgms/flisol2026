@@ -23,7 +23,9 @@
           <p class="author-name">Jonathan Velazquez</p>
           <p class="author-event">FLISoL CABA — 2026</p>
         </div>
-        <div class="cover-badge">FLISoL</div>
+        <div class="cover-logo">
+          <img src="img/logo-horizontal-2026.png" alt="FLISoL CABA 2026" />
+        </div>
       </div>
     </section>
 
@@ -41,25 +43,28 @@
     <!-- Slide 3: Vibe Coding pros/contras -->
     <section class="slide" data-slide="3">
       <header class="slide-header">
-        <h2 class="slide-title">Vibe Coding</h2>
-        <p class="slide-subtitle">"Es como pedirle a alguien que te construya una casa describiéndola de memoria y después descubrir que no hay cimientos"</p>
+        <h2 class="slide-title">Qué es (y qué no) el vibe coding</h2>
+        <p class="slide-subtitle">El término lo acuñó Andrej Karpathy a principios de 2025: entregarse a las vibras y aceptar lo que el agente produce sin revisarlo a fondo.</p>
       </header>
       <div class="two-col">
         <article class="card card-positive">
-          <div class="card-pill pill-good">Lo bueno</div>
+          <div class="card-pill pill-good">Su valor real</div>
           <ul class="card-list">
-            <li>Velocidad extrema para prototipos</li>
-            <li>Accesible para no-programadores</li>
+            <li>Velocidad y exploración: idea → prototipo en minutos</li>
+            <li>Baja la barrera de entrada (no hace falta ser programador)</li>
+            <li>Ideal para descartables, demos y probar hipótesis</li>
           </ul>
         </article>
         <article class="card card-negative">
-          <div class="card-pill pill-bad">Lo no tan bueno</div>
+          <div class="card-pill pill-bad">Su costo oculto</div>
           <ul class="card-list">
-            <li>No queda registro de las decisiones tomadas</li>
-            <li>Se puede usar código sin entender su funcionalidad, generando errores o vulnerabilidades no detectadas</li>
+            <li>No queda registro de las decisiones que se tomaron</li>
+            <li>Aceptás código sin entenderlo: errores y vulnerabilidades que no ves</li>
+            <li>No hay un contrato contra el cual verificar lo generado</li>
           </ul>
         </article>
       </div>
+      <p class="footnote">No es un anti-patrón: es una <strong>herramienta</strong>. El problema empieza cuando la usás fuera de su rango.</p>
     </section>
 
     <!-- Slide 4: Cita Karpathy 2 -->
@@ -169,6 +174,39 @@ El cupón puede ser por porcentaje o por monto fijo.
 - Usuario ya usó el cupón        <span class="md-arrow">→</span> error <span class="md-err">VOUCHER_ALREADY_USED</span></div>
     </section>
 
+    <!-- Slide nuevo: El muro -->
+    <section class="slide" data-slide="muro">
+      <header class="slide-header">
+        <h2 class="slide-title">El muro</h2>
+        <p class="slide-subtitle">El vibe coding deja de ser confiable pasada cierta complejidad: el agente empieza a adivinar requisitos que nunca enunciaste.</p>
+      </header>
+      <div class="wall-stat">
+        <span class="num">~500</span>
+        <span class="num-label">líneas es el umbral que se suele citar.<br />No es un límite exacto: es donde lo implícito se acumula y empieza a romper.</span>
+      </div>
+      <div class="three-col">
+        <article class="card card-dark">
+          <span class="card-num">1</span>
+          <h3 class="card-title">Requisitos implícitos</h3>
+          <p>El agente inventa las decisiones que no tomaste: bordes, validaciones, reglas de negocio. Como en <em>applyCoupon</em>.</p>
+        </article>
+        <article class="card card-dark">
+          <span class="card-num">2</span>
+          <h3 class="card-title">Deriva de contexto</h3>
+          <p>Entre sesiones el contexto se contamina y se pierde. Lo que "sabía" ayer hoy ya no está, y las decisiones cambian sin avisar.</p>
+        </article>
+        <article class="card card-dark">
+          <span class="card-num">3</span>
+          <h3 class="card-title">Sin contrato</h3>
+          <p>No hay una fuente de verdad contra la cual verificar. "Parece andar" es lo único que podés comprobar.</p>
+        </article>
+      </div>
+      <blockquote class="fail-quote">
+        La mayor parte del tiempo no estaba arreglando bugs: estaba arreglando decisiones poco claras que nunca tomé de forma explícita.
+        <span class="src">— parafraseando a un dev sobre vibe coding</span>
+      </blockquote>
+    </section>
+
     <!-- Slide 5: Espectro de estructura -->
     <section class="slide" data-slide="5">
       <header class="slide-header">
@@ -271,6 +309,7 @@ Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</
     <section class="slide" data-slide="8">
       <header class="slide-header">
         <h2 class="slide-title">Spec Driven Development</h2>
+        <p class="slide-subtitle">Definís comportamiento, restricciones y criterios de aceptación <em>antes</em>; el agente implementa contra ese contrato. Martin Fowler y ThoughtWorks ya lo documentan: pasó de metodología emergente a casi estándar de industria.</p>
       </header>
       <div class="three-col">
         <article class="card card-glow">
@@ -292,7 +331,69 @@ Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</
           <ul>
             <li>Una buena spec no se escribe una vez y se momifica</li>
             <li>Se puede modificar, extender o reducir su alcance. Si la spec es muy grande posiblemente deba ser reducida en varias specs</li>
+            <li>Matiz: las specs estáticas se vuelven caras y derivan; las vivas se sincronizan con el código</li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slide nuevo: De autocompletado a ingeniero -->
+    <section class="slide" data-slide="ingeniero">
+      <header class="slide-header">
+        <h2 class="slide-title">De autocompletado a ingeniero</h2>
+        <p class="slide-subtitle">El truco conceptual de SDD: dejás de pedirle <em>qué tipear</em> y empezás a pedirle <em>qué comportamiento garantizar</em>.</p>
+      </header>
+      <div class="compare">
+        <div class="compare-col">
+          <span class="compare-label bad">⚙️ Instrucción técnica (vaga)</span>
+          <div class="code-block">Usá PostgreSQL para guardar
+la actividad de los usuarios.</div>
+          <p class="compare-note">Describe la implementación, no el resultado. El agente completa los huecos adivinando. No hay nada que verificar.</p>
+        </div>
+        <div class="compare-col">
+          <span class="compare-label good">🎯 Criterio conductual (verificable)</span>
+          <div class="code-block">Como admin puedo consultar la
+actividad de usuarios de los
+últimos 90 días y recibir
+resultados en menos de 2 s.</div>
+          <p class="compare-note">Define comportamiento observable y restricciones. Es un contrato: o se cumple, o no. La base de datos es un detalle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide nuevo: Workflow de 3 fases -->
+    <section class="slide" data-slide="fases">
+      <header class="slide-header">
+        <h2 class="slide-title">El workflow de 3 fases</h2>
+        <p class="slide-subtitle">Las herramientas le ponen nombres distintos, pero la estructura es siempre la misma. Un modelo mental portable, independiente de la herramienta.</p>
+      </header>
+      <div class="phases">
+        <article class="phase">
+          <span class="phase-step">FASE 1</span>
+          <h3>Definir el qué</h3>
+          <div class="phase-names">
+            <span class="phase-name"><b>Requirements</b><span class="tool">AWS Kiro</span></span>
+            <span class="phase-name"><b>Specify</b><span class="tool">GitHub Spec Kit</span></span>
+          </div>
+          <p class="phase-foot">Comportamiento, restricciones y criterios de aceptación. Existe notación formal para esto (EARS).</p>
+        </article>
+        <article class="phase">
+          <span class="phase-step">FASE 2</span>
+          <h3>Diseñar el cómo</h3>
+          <div class="phase-names">
+            <span class="phase-name"><b>Design</b><span class="tool">AWS Kiro</span></span>
+            <span class="phase-name"><b>Plan</b><span class="tool">GitHub Spec Kit</span></span>
+          </div>
+          <p class="phase-foot">Arquitectura, modelo de datos y decisiones técnicas, derivadas de la spec.</p>
+        </article>
+        <article class="phase">
+          <span class="phase-step">FASE 3</span>
+          <h3>Partir en tareas</h3>
+          <div class="phase-names">
+            <span class="phase-name"><b>Tasks</b><span class="tool">AWS Kiro</span></span>
+            <span class="phase-name"><b>Tasks</b><span class="tool">GitHub Spec Kit</span></span>
+          </div>
+          <p class="phase-foot">Cambios chicos y revisables que el agente implementa y verifica contra el contrato.</p>
         </article>
       </div>
     </section>
@@ -311,6 +412,45 @@ Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</
         <li><strong>Actualizar la spec</strong> después de su implementación</li>
       </ul>
       <p class="callout">SDD busca trazabilidad y precisión al construir con IA</p>
+    </section>
+
+    <!-- Slide nuevo: El ecosistema de herramientas -->
+    <section class="slide" data-slide="ecosistema">
+      <header class="slide-header">
+        <h2 class="slide-title">El ecosistema</h2>
+        <p class="slide-subtitle">No hay una herramienta única: hay un espectro, desde un markdown hasta un IDE dedicado.</p>
+      </header>
+      <div class="tool-axis">
+        <span>Liviano · un archivo</span>
+        <span class="arrow"></span>
+        <span>Pesado · IDE dedicado</span>
+      </div>
+      <div class="three-col">
+        <article class="card card-glow">
+          <h3 class="card-title">CLAUDE.md</h3>
+          <ul>
+            <li>Un simple markdown ya funciona como spec liviana</li>
+            <li>Cero setup: contexto y reglas viven con el repo</li>
+          </ul>
+          <p class="card-foot">Punto de entrada más bajo</p>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">GitHub Spec Kit</h3>
+          <ul>
+            <li>Open source (MIT) · <span class="star">★</span> +90k estrellas</li>
+            <li>Funciona con 30+ agentes, incluido Claude Code</li>
+          </ul>
+          <p class="card-foot">Flujo Specify → Plan → Tasks</p>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">AWS Kiro</h3>
+          <ul>
+            <li>IDE construido sobre Code OSS</li>
+            <li>Sistema de <em>hooks</em> para automatizar el flujo</li>
+          </ul>
+          <p class="card-foot">Flujo Requirements → Design → Tasks</p>
+        </article>
+      </div>
     </section>
 
     <!-- Slide 10: OpenSpec intro -->
@@ -403,6 +543,7 @@ Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</
       </div>
       <div class="closing-content">
         <h2 class="closing-headline">No alcanza con pedir bien: hay que construir con <span class="accent">trazabilidad</span></h2>
+        <p class="closing-tradeoff">El trade-off es honesto: <strong>más trabajo al principio</strong> a cambio de <strong>menos sorpresas después</strong>. No vale la pena para un script rápido; es esencial para algo que va a producción. La clave es saber cuándo usar cada modo.</p>
         <h3 class="closing-thanks">¡Gracias!</h3>
         <div class="contact">
           <strong>Contacto</strong>

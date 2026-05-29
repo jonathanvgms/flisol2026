@@ -126,18 +126,19 @@ body {
   font-size: 1rem;
   color: var(--text-dim);
 }
-.cover-badge {
+.cover-logo {
   position: absolute;
   bottom: 4rem; right: 6rem;
-  background: linear-gradient(135deg, #ff8a00, #ff5722);
-  color: #fff;
-  font-weight: 700;
-  padding: 0.7rem 1.2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  box-shadow: 0 8px 28px rgba(255, 138, 0, 0.4);
+  background: #fff;
+  padding: 0.7rem 1.1rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   z-index: 2;
+}
+.cover-logo img {
+  display: block;
+  height: clamp(40px, 5vw, 60px);
+  width: auto;
 }
 
 /* Quotes */
@@ -560,6 +561,117 @@ body {
   .rotura-num { margin-bottom: 0.2rem; }
 }
 
+/* ===== Mejoras de contenido (definición, muro, SDD, fases, herramientas) ===== */
+.lead {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 1040px;
+  margin-bottom: 1.6rem;
+}
+.lead strong, .lead .accent { color: var(--purple-2); font-weight: 600; }
+
+/* Pills de color para el slide de vibe coding */
+.pill-good { background: linear-gradient(135deg, #2fae6b, #1e7d4d); }
+.pill-bad  { background: linear-gradient(135deg, #d98b2b, #b5651a); }
+
+.footnote {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footnote strong { color: var(--purple-2); }
+
+/* El muro */
+.wall-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 1040px;
+}
+.wall-stat .num {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 200;
+  color: var(--purple-2);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.wall-stat .num-label { color: var(--text-dim); font-size: clamp(0.95rem, 1.2vw, 1.1rem); line-height: 1.45; }
+.card-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 9px;
+  background: rgba(157, 124, 245, 0.18);
+  color: var(--purple-2); font-weight: 700; font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+.fail-quote {
+  margin-top: 1.8rem;
+  max-width: 1040px;
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--text);
+  border-left: 3px solid var(--purple);
+  padding: 0.5rem 0 0.5rem 1.2rem;
+}
+.fail-quote .src { display: block; margin-top: 0.5rem; color: var(--text-dim); font-style: normal; font-size: 0.85rem; }
+
+/* Comparación: instrucción vaga vs conductual */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
+.compare-col { display: flex; flex-direction: column; gap: 0.9rem; }
+.compare-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-weight: 600; font-size: 1.05rem;
+}
+.compare-label.bad  { color: #e0a35a; }
+.compare-label.good { color: #6ee7b7; }
+.compare .code-block { flex: 1; font-size: clamp(0.85rem, 1.05vw, 1.05rem); white-space: pre-wrap; }
+.compare-note { color: var(--text-dim); font-size: 0.92rem; line-height: 1.5; }
+
+/* Workflow de 3 fases */
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+.phase {
+  background: linear-gradient(135deg, rgba(94, 63, 184, 0.4), rgba(43, 25, 95, 0.55));
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.7rem;
+}
+.phase-step { color: var(--purple); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; }
+.phase h3 { color: var(--text); font-size: 1.25rem; font-weight: 600; margin: 0.4rem 0 1.2rem; }
+.phase-names { display: flex; flex-direction: column; gap: 0.6rem; }
+.phase-name { font-size: 0.95rem; color: var(--text-dim); }
+.phase-name b { color: var(--purple-2); font-weight: 600; }
+.phase-name .tool { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6d6a8a; }
+.phase-foot { margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-dim); line-height: 1.45; }
+
+/* Ecosistema de herramientas */
+.tool-axis {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1100px; margin: 0 auto 1.4rem;
+  color: var(--text-dim); font-size: 0.85rem; letter-spacing: 0.03em;
+}
+.tool-axis .arrow { flex: 1; height: 1px; margin: 0 1rem; background: linear-gradient(90deg, var(--purple-2), transparent); }
+.card .star { color: #ffcb6b; }
+.card-foot { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid rgba(157,124,245,0.12); font-size: 0.82rem; color: var(--text-dim); }
+
+/* Cierre: tradeoff */
+.closing-tradeoff {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 2.5rem;
+  max-width: 780px;
+}
+.closing-tradeoff strong { color: var(--purple-2); font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .compare, .phases { grid-template-columns: 1fr; }
+}
+
 /* Closing */
 .slide-closing { padding: 0; overflow: hidden; }
 .ribbons {
@@ -768,7 +880,7 @@ body {
   .split { grid-template-columns: 1fr; gap: 2rem; }
   .three-col { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
-  .cover-badge { bottom: 6rem; right: 2.5rem; }
+  .cover-logo { bottom: 6rem; right: 2.5rem; }
 }
 
 @media (max-width: 640px) {
