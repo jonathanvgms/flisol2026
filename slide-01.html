@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portada — De Vibe Coding a Spec-Driven Development — FLISoL CABA 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-slide="1">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <main class="deck">
+
+    <!-- Slide 1: Portada -->
+    <section class="slide slide-cover active" data-slide="1">
+      <div class="cover-bg"></div>
+      <div class="cover-content">
+        <h1 class="cover-title">
+          <span class="line">De Vibe Coding a</span>
+          <span class="line accent">Spec-Driven Development</span>
+        </h1>
+        <div class="cover-author">
+          <p class="author-name">Jonathan Velazquez</p>
+          <p class="author-event">FLISoL CABA — 2026</p>
+        </div>
+        <div class="cover-badge">FLISoL</div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Anterior">‹</button>
+    <span class="nav-counter"><span id="current">1</span> / <span id="total">12</span></span>
+    <button class="nav-btn" id="nextBtn" aria-label="Siguiente">›</button>
+  </nav>
+
+  <button class="overview-btn" id="overviewBtn" aria-label="Vista general">⊞</button>
+
+  <div class="overview" id="overview">
+    <div class="overview-grid" id="overviewGrid"></div>
+  </div>
+
+  <div class="hint" id="hint">Usá ← → o espacio para navegar · Esc para vista general</div>
+
+  <script src="slides.js"></script>
+</body>
+</html>

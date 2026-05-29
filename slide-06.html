@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenCode — FLISoL CABA 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-slide="6">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <main class="deck">
+
+    <!-- Slide 6: OpenCode -->
+    <section class="slide active" data-slide="6">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="slide-title">OpenCode</h2>
+          <p class="slide-subtitle">Agente de IA para desarrollo de software</p>
+          <ul class="bullets">
+            <li>Agente para trabajar sobre código real</li>
+            <li>Lee, propone, edita y ejecuta</li>
+            <li>Pensado para desarrollo sobre proyectos existentes</li>
+          </ul>
+          <p class="note">Es agnóstico del modelo/proveedor de IA que uses</p>
+          <a class="link" href="https://opencode.ai/" target="_blank" rel="noopener">https://opencode.ai/</a>
+        </div>
+        <div class="split-right">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">opencode</span>
+            </div>
+            <pre class="terminal-body"># Change button color to danger in settings.tsx
+<span class="cmd">›</span> /share
+
+<span class="ai">Perfect! I can see that the Button component supports a "danger" variant.
+Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</span>
+
+<span class="diff-file">Edit packages/frontend/src/containers/Settings.tsx</span>
+
+  &lt;Button
+    type="submit"
+<span class="diff-minus">-   variant="primary"</span>
+<span class="diff-plus">+   variant="danger"</span>
+    loading={isLoading}
+    disabled={units === ""}
+  &gt;
+    Purchase
+  &lt;/Button&gt;
+
+<span class="ai">The button color has been changed to danger in Settings.tsx.</span>
+
+<span class="cmd">›</span> █</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Anterior">‹</button>
+    <span class="nav-counter"><span id="current">1</span> / <span id="total">12</span></span>
+    <button class="nav-btn" id="nextBtn" aria-label="Siguiente">›</button>
+  </nav>
+
+  <button class="overview-btn" id="overviewBtn" aria-label="Vista general">⊞</button>
+
+  <div class="overview" id="overview">
+    <div class="overview-grid" id="overviewGrid"></div>
+  </div>
+
+  <div class="hint" id="hint">Usá ← → o espacio para navegar · Esc para vista general</div>
+
+  <script src="slides.js"></script>
+</body>
+</html>
