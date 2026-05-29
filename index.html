@@ -74,6 +74,101 @@
       <p class="quote-takeaway">Entonces.. La velocidad aumentó; el problema ahora es el <span class="highlight">control</span>.</p>
     </section>
 
+    <!-- Ejemplo 1: El prompt vibe -->
+    <section class="slide slide-example" data-slide="ej-1">
+      <header class="slide-header">
+        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <h2 class="slide-title">El prompt de un martes a las 5pm</h2>
+      </header>
+      <div class="code-block code-prompt">Estoy armando el checkout de un e-commerce.
+Necesito una función JS: <span class="tok-fn">applyCoupon</span>(cartTotal, coupon)
+que devuelva el total con el descuento aplicado.
+El cupón puede ser por porcentaje o por monto fijo.
+<span class="prompt-hl">Hacelo simple, después lo refino.</span></div>
+    </section>
+
+    <!-- Ejemplo 2: Lo que devuelve el agente -->
+    <section class="slide slide-example" data-slide="ej-2">
+      <header class="slide-header">
+        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <h2 class="slide-title">Lo que el agente devuelve</h2>
+      </header>
+      <div class="code-stack">
+        <div class="code-block"><span class="tok-key">function</span> <span class="tok-fn">applyCoupon</span>(cartTotal, coupon) {
+  <span class="tok-key">if</span> (coupon.<span class="tok-prop">type</span> <span class="tok-op">===</span> <span class="tok-str">'percentage'</span>) {
+    <span class="tok-key">return</span> cartTotal <span class="tok-op">-</span> (cartTotal <span class="tok-op">*</span> coupon.<span class="tok-prop">value</span> <span class="tok-op">/</span> <span class="tok-num">100</span>);
+  }
+  <span class="tok-key">return</span> cartTotal <span class="tok-op">-</span> coupon.<span class="tok-prop">value</span>;
+}</div>
+        <div class="code-result">
+          <span><span class="tok-fn">applyCoupon</span>(<span class="tok-num">100</span>, { type:<span class="tok-str">'percentage'</span>, value:<span class="tok-num">20</span> }) <span class="tok-com">// → 80</span></span>
+          <span class="ok">✅</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejemplo 3: Tres maneras de romperlo -->
+    <section class="slide slide-example" data-slide="ej-3">
+      <header class="slide-header">
+        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <h2 class="slide-title">Tres maneras de romperlo</h2>
+      </header>
+      <div class="roturas">
+        <article class="rotura">
+          <div class="rotura-num">1</div>
+          <div class="rotura-body">
+            <h3>Total negativo</h3>
+            <div class="code-block"><span class="tok-fn">applyCoupon</span>(<span class="tok-num">30</span>, { type:<span class="tok-str">'fixed'</span>, value:<span class="tok-num">50</span> }) <span class="tok-com">// → -20</span></div>
+            <em class="rotura-quote">Nunca dije que el descuento no pueda superar el total.</em>
+          </div>
+        </article>
+        <article class="rotura">
+          <div class="rotura-num">2</div>
+          <div class="rotura-body">
+            <h3>Cupón inmortal</h3>
+            <div class="code-block"><span class="tok-com">// La función no chequea fecha. Un cupón de Black Friday</span>
+<span class="tok-com">// sigue funcionando en marzo.</span></div>
+            <em class="rotura-quote">Nunca dije que los cupones venzan.</em>
+          </div>
+        </article>
+        <article class="rotura">
+          <div class="rotura-num">3</div>
+          <div class="rotura-body">
+            <h3>Reaplicación infinita</h3>
+            <div class="code-block"><span class="tok-key">let</span> t <span class="tok-op">=</span> <span class="tok-num">100</span>;
+<span class="tok-key">for</span> (<span class="tok-key">let</span> i <span class="tok-op">=</span> <span class="tok-num">0</span>; i <span class="tok-op">&lt;</span> <span class="tok-num">5</span>; i<span class="tok-op">++</span>)
+  t <span class="tok-op">=</span> <span class="tok-fn">applyCoupon</span>(t, { type:<span class="tok-str">'percentage'</span>, value:<span class="tok-num">50</span> });
+<span class="tok-com">// → 3.125</span></div>
+            <em class="rotura-quote">Nunca dije si se acumulan.</em>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ejemplo 4: Lo mismo, pero spec-driven -->
+    <section class="slide slide-example" data-slide="ej-4">
+      <header class="slide-header">
+        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <h2 class="slide-title">Lo mismo, pero spec-driven</h2>
+      </header>
+      <div class="code-block code-spec"><span class="md-h1"># Feature: Aplicar cupón al carrito</span>
+
+<span class="md-h2">## Reglas</span>
+- Tipos: PERCENTAGE, FIXED_AMOUNT
+- Validar fecha de vencimiento (UTC)
+- Validar monto mínimo del carrito
+- Un solo cupón activo por carrito
+- El descuento no puede dejar el total bajo 0
+- Redondeo HALF_UP a 2 decimales
+- Validar límite de uso por usuario
+
+<span class="md-h2">## Criterios de aceptación</span>
+- Carrito $100 + cupón 20%      <span class="md-arrow">→</span> total $80.00
+- Carrito $30  + cupón fijo $50 <span class="md-arrow">→</span> total $0.00 (no negativo)
+- Cupón vencido                  <span class="md-arrow">→</span> error <span class="md-err">VOUCHER_EXPIRED</span>
+- Usuario ya usó el cupón        <span class="md-arrow">→</span> error <span class="md-err">VOUCHER_ALREADY_USED</span></div>
+    </section>
+
     <!-- Slide 5: Espectro de estructura -->
     <section class="slide" data-slide="5">
       <header class="slide-header">
