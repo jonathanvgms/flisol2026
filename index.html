@@ -4,11 +4,335 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>De Vibe Coding a Spec-Driven Development — FLISoL CABA 2026</title>
-  <meta http-equiv="refresh" content="0; url=slide-01.html" />
-  <link rel="canonical" href="slide-01.html" />
-  <script>window.location.replace('slide-01.html');</script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <p>Redirigiendo a la <a href="slide-01.html">presentación</a>…</p>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <main class="deck" id="deck">
+
+    <!-- Slide 1: Portada -->
+    <section class="slide slide-cover active" data-slide="1">
+      <div class="cover-bg"></div>
+      <div class="cover-content">
+        <h1 class="cover-title">
+          <span class="line">De Vibe Coding a</span>
+          <span class="line accent">Spec-Driven Development</span>
+        </h1>
+        <div class="cover-author">
+          <p class="author-name">Jonathan Velazquez</p>
+          <p class="author-event">FLISoL CABA — 2026</p>
+        </div>
+        <div class="cover-badge">FLISoL</div>
+      </div>
+    </section>
+
+    <!-- Slide 2: Cita Karpathy 1 -->
+    <section class="slide slide-quote" data-slide="2">
+      <div class="quote-gradient"></div>
+      <blockquote class="quote">
+        <p>
+          "There's a new kind of coding I call <em>"vibe coding"</em>, when you fully give in to the vibes, embrace exponentials, and forget that code even exists."
+        </p>
+        <footer>— Andrej Karpathy, Feb 3, 2025</footer>
+      </blockquote>
+    </section>
+
+    <!-- Slide 3: Vibe Coding pros/contras -->
+    <section class="slide" data-slide="3">
+      <header class="slide-header">
+        <h2 class="slide-title">Vibe Coding</h2>
+        <p class="slide-subtitle">"Es como pedirle a alguien que te construya una casa describiéndola de memoria y después descubrir que no hay cimientos"</p>
+      </header>
+      <div class="two-col">
+        <article class="card card-positive">
+          <div class="card-pill pill-good">Lo bueno</div>
+          <ul class="card-list">
+            <li>Velocidad extrema para prototipos</li>
+            <li>Accesible para no-programadores</li>
+          </ul>
+        </article>
+        <article class="card card-negative">
+          <div class="card-pill pill-bad">Lo no tan bueno</div>
+          <ul class="card-list">
+            <li>No queda registro de las decisiones tomadas</li>
+            <li>Se puede usar código sin entender su funcionalidad, generando errores o vulnerabilidades no detectadas</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slide 4: Cita Karpathy 2 -->
+    <section class="slide slide-quote" data-slide="4">
+      <div class="quote-gradient"></div>
+      <blockquote class="quote">
+        <p>
+          "Many people have tried to come up with a better name for this to differentiate it from vibe coding, personally my current favorite <strong>agentic engineering</strong>"
+        </p>
+        <footer>— Andrej Karpathy, Feb 4, 2026</footer>
+      </blockquote>
+      <p class="quote-takeaway">Entonces.. La velocidad aumentó; el problema ahora es el <span class="highlight">control</span>.</p>
+    </section>
+
+    <!-- Slide 5: Espectro de estructura -->
+    <section class="slide" data-slide="5">
+      <header class="slide-header">
+        <h2 class="slide-title">Espectro de estructura</h2>
+        <p class="slide-subtitle">No hay uno correcto, depende del contexto</p>
+      </header>
+      <div class="spectrum">
+        <div class="spectrum-step">
+          <h3>Vibe Coding</h3>
+          <div class="spectrum-dot"></div>
+          <p>Velocidad máxima, control mínimo</p>
+        </div>
+        <div class="spectrum-arrow">→</div>
+        <div class="spectrum-step">
+          <h3>Plan → Build</h3>
+          <div class="spectrum-dot"></div>
+          <p>Buen balance para trabajo individual</p>
+        </div>
+        <div class="spectrum-arrow">→</div>
+        <div class="spectrum-step">
+          <h3>Plan → Build + SDD</h3>
+          <div class="spectrum-dot"></div>
+          <p>Mejora sobre procesos de implementación y uso de IA</p>
+        </div>
+        <div class="spectrum-arrow">→</div>
+        <div class="spectrum-step">
+          <h3>Plan → Build + OpenSpec</h3>
+          <div class="spectrum-dot"></div>
+          <p>Más control / más trazabilidad</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: OpenCode -->
+    <section class="slide" data-slide="6">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="slide-title">OpenCode</h2>
+          <p class="slide-subtitle">Agente de IA para desarrollo de software</p>
+          <ul class="bullets">
+            <li>Agente para trabajar sobre código real</li>
+            <li>Lee, propone, edita y ejecuta</li>
+            <li>Pensado para desarrollo sobre proyectos existentes</li>
+          </ul>
+          <p class="note">Es agnóstico del modelo/proveedor de IA que uses</p>
+          <a class="link" href="https://opencode.ai/" target="_blank" rel="noopener">https://opencode.ai/</a>
+        </div>
+        <div class="split-right">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">opencode</span>
+            </div>
+            <pre class="terminal-body"># Change button color to danger in settings.tsx
+<span class="cmd">›</span> /share
+
+<span class="ai">Perfect! I can see that the Button component supports a "danger" variant.
+Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</span>
+
+<span class="diff-file">Edit packages/frontend/src/containers/Settings.tsx</span>
+
+  &lt;Button
+    type="submit"
+<span class="diff-minus">-   variant="primary"</span>
+<span class="diff-plus">+   variant="danger"</span>
+    loading={isLoading}
+    disabled={units === ""}
+  &gt;
+    Purchase
+  &lt;/Button&gt;
+
+<span class="ai">The button color has been changed to danger in Settings.tsx.</span>
+
+<span class="cmd">›</span> █</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Modo plan y build -->
+    <section class="slide" data-slide="7">
+      <header class="slide-header center">
+        <h2 class="slide-title">Modo plan y build</h2>
+      </header>
+      <div class="two-col">
+        <article class="card card-dark">
+          <h3 class="card-title">Plan = pensar sin tocar código</h3>
+          <p>Pensado para analizar, proponer cambios y armar un plan sin modificar el código fuente.</p>
+        </article>
+        <article class="card card-dark">
+          <h3 class="card-title">Build = ejecutar cambios reales</h3>
+          <p>Modo de implementación. Tiene las herramientas habilitadas para editar archivos, ejecutar comandos y hacer trabajo de desarrollo real sobre el proyecto.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slide 8: Spec Driven Development -->
+    <section class="slide" data-slide="8">
+      <header class="slide-header">
+        <h2 class="slide-title">Spec Driven Development</h2>
+      </header>
+      <div class="three-col">
+        <article class="card card-glow">
+          <h3 class="card-title">La spec como fuente de verdad</h3>
+          <ul>
+            <li>Especificación clara de lo que el sistema debe hacer</li>
+            <li>Describir intención, comportamiento y alcance, y sirve para alinear a todos antes de construir</li>
+          </ul>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">Implementar y verificar contra la spec</h3>
+          <ul>
+            <li>Guía la implementación y también para verificar si lo construido responde a lo pedido</li>
+            <li>El equipo escribe especificaciones claras del comportamiento esperado y luego genera, implementa o verifica código contra esas especificaciones</li>
+          </ul>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">La spec como documento vivo</h3>
+          <ul>
+            <li>Una buena spec no se escribe una vez y se momifica</li>
+            <li>Se puede modificar, extender o reducir su alcance. Si la spec es muy grande posiblemente deba ser reducida en varias specs</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slide 9: Implementación SDD -->
+    <section class="slide" data-slide="9">
+      <header class="slide-header center">
+        <h2 class="slide-title">Implementación SDD</h2>
+      </header>
+      <ul class="check-list">
+        <li><strong>Escribir la spec:</strong> alcance, comportamiento esperado, restricciones y criterios de aceptación</li>
+        <li><strong>Documentar el diseño:</strong> arquitectura, modelo de datos, APIs, impacto y riesgos</li>
+        <li><strong>Partir el trabajo en tareas chicas</strong> y las implementás en cambios pequeños y revisables</li>
+        <li><strong>Registrar decisiones importantes</strong> en ADRs (Architecture Decision Record)</li>
+        <li><strong>Revisar contra la spec,</strong> no solo contra el código</li>
+        <li><strong>Actualizar la spec</strong> después de su implementación</li>
+      </ul>
+      <p class="callout">SDD busca trazabilidad y precisión al construir con IA</p>
+    </section>
+
+    <!-- Slide 10: OpenSpec intro -->
+    <section class="slide" data-slide="10">
+      <div class="split">
+        <div class="split-left">
+          <h2 class="slide-title">OpenSpec</h2>
+          <p class="slide-subtitle">Framework para estructurar cambios antes de implementarlos</p>
+          <ul class="bullets">
+            <li>Framework para organizar cambios con <em>proposal</em>, <em>specs</em>, <em>design</em> y <em>tasks</em></li>
+            <li>Convierte intención en artefactos trazables</li>
+            <li>Ayuda a trabajar con IA sin depender de prompts sueltos</li>
+          </ul>
+          <a class="link" href="https://openspec.dev/" target="_blank" rel="noopener">https://openspec.dev/</a>
+        </div>
+        <div class="split-right">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">openspec view</span>
+            </div>
+            <pre class="terminal-body"><span class="ai">OpenSpec Dashboard</span>
+
+<span class="dim">────────────────────────────────────</span>
+<span class="hl">Summary:</span>
+  • Specifications: <b>10</b> specs, 64 requirements
+  • Active Changes: <b>3</b> in progress
+  • Completed Changes: <b>4</b>
+  • Task Progress: <b>30/41</b> (73% complete)
+
+<span class="hl">Active Changes</span>
+  ● make-validation-scope-aware    [░░░░░░] 0%
+  ● remove-diff-command            [████░░] 90%
+  ● improve-deterministic-tests    [█████░] 92%
+
+<span class="hl">Completed Changes</span>
+  ✓ add-slash-command-support
+  ✓ sort-active-changes-by-progress
+  ✓ update-agent-file-name
+  ✓ update-agent-instructions
+
+<span class="hl">Specifications</span>
+  ■ cli-archive            10 requirements
+  ■ openspec-conventions   10 requirements
+  ■ cli-validate            9 requirements
+  ■ cli-list                7 requirements
+  ■ cli-view                7 requirements</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 11: OpenSpec detalle -->
+    <section class="slide" data-slide="11">
+      <header class="slide-header">
+        <h2 class="slide-title">OpenSpec</h2>
+      </header>
+      <div class="three-col">
+        <article class="card card-glow">
+          <h3 class="card-title">Alinear antes de programar</h3>
+          <ul>
+            <li>Equipo humano y agente acuerdan qué se va a construir antes de tocar código</li>
+            <li>"Agree before you build", para que los requisitos se tengan en cuenta</li>
+          </ul>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">Convertir la intención en artefactos explícitos</h3>
+          <ul>
+            <li>En vez de depender de prompts sueltos, el cambio se estructura con artefactos concretos: proposal, specs, design y tasks</li>
+            <li>De "pedido informal" a "trabajo trazable y ejecutable"</li>
+          </ul>
+        </article>
+        <article class="card card-glow">
+          <h3 class="card-title">Cerrar el ciclo con trazabilidad y fuente de verdad</h3>
+          <ul>
+            <li>El desarrollo no termina al implementar: el cambio aprobado se archiva, se integra a las specs principales y queda historial auditable (archivos markdown)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Slide 12: Cierre -->
+    <section class="slide slide-closing" data-slide="12">
+      <div class="ribbons">
+        <div class="ribbon r1"></div>
+        <div class="ribbon r2"></div>
+        <div class="ribbon r3"></div>
+      </div>
+      <div class="closing-content">
+        <h2 class="closing-headline">No alcanza con pedir bien: hay que construir con <span class="accent">trazabilidad</span></h2>
+        <h3 class="closing-thanks">¡Gracias!</h3>
+        <div class="contact">
+          <strong>Contacto</strong>
+          <a href="mailto:jonathanvgms@gmail.com">jonathanvgms@gmail.com</a>
+          <a href="http://linkedin.com/in/jvelazquez27/" target="_blank" rel="noopener">linkedin.com/in/jvelazquez27/</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Anterior">‹</button>
+    <span class="nav-counter"><span id="current">1</span> / <span id="total">12</span></span>
+    <button class="nav-btn" id="nextBtn" aria-label="Siguiente">›</button>
+  </nav>
+
+  <button class="overview-btn" id="overviewBtn" aria-label="Vista general">⊞</button>
+
+  <div class="overview" id="overview">
+    <div class="overview-grid" id="overviewGrid"></div>
+  </div>
+
+  <div class="hint" id="hint">Usá ← → o espacio para navegar · Esc para vista general</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
