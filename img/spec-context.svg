@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="c-doc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1140"/>
+      <stop offset="1" stop-color="#150c30"/>
+    </linearGradient>
+    <filter id="c-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#9d7cf5" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- spec doc (source of truth) -->
+  <g filter="url(#c-glow)">
+    <rect x="34" y="74" width="120" height="150" rx="14" fill="url(#c-doc)" stroke="#9d7cf5" stroke-width="2"/>
+  </g>
+  <rect x="52" y="98" width="70" height="7" rx="3.5" fill="#b8a3ff"/>
+  <rect x="52" y="118" width="84" height="6" rx="3" fill="#6a5da0"/>
+  <rect x="52" y="134" width="84" height="6" rx="3" fill="#4a4076"/>
+  <rect x="52" y="150" width="60" height="6" rx="3" fill="#4a4076"/>
+  <rect x="52" y="166" width="84" height="6" rx="3" fill="#4a4076"/>
+  <!-- source of truth star -->
+  <path d="M138 78 l5 10 l11 1 l-8 8 l2 11 l-10 -5 l-10 5 l2 -11 l-8 -8 l11 -1 Z" transform="translate(-6,-6)" fill="#ffcb6b"/>
+
+  <!-- flow arrow -->
+  <path d="M162 150 L208 150" stroke="#6ee7b7" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M200 142 L212 150 L200 158" stroke="#6ee7b7" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- agent / robot head -->
+  <g transform="translate(228,84)">
+    <line x1="66" y1="0" x2="66" y2="-14" stroke="#9d7cf5" stroke-width="4"/>
+    <circle cx="66" cy="-18" r="6" fill="#6ee7b7"/>
+    <rect x="6" y="6" width="120" height="100" rx="22" fill="#241650" stroke="#b8a3ff" stroke-width="3"/>
+    <!-- eyes -->
+    <circle cx="46" cy="52" r="13" fill="#150c30"/>
+    <circle cx="86" cy="52" r="13" fill="#150c30"/>
+    <circle cx="46" cy="52" r="6" fill="#9d7cf5"/>
+    <circle cx="86" cy="52" r="6" fill="#9d7cf5"/>
+    <!-- mouth -->
+    <rect x="48" y="80" width="36" height="6" rx="3" fill="#6ee7b7"/>
+    <!-- ears -->
+    <rect x="-4" y="44" width="10" height="28" rx="5" fill="#9d7cf5"/>
+    <rect x="126" y="44" width="10" height="28" rx="5" fill="#9d7cf5"/>
+  </g>
+</svg>

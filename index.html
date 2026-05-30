@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>De Vibe Coding a Spec-Driven Development — FLISoL CABA 2026</title>
+  <link rel="icon" href="logo.ico" sizes="any" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,13 +25,13 @@
           <p class="author-event">FLISoL CABA — 2026</p>
         </div>
         <div class="cover-logo">
-          <img src="img/logo-horizontal-2026.png" alt="FLISoL CABA 2026" />
+          <img src="img/logo-horizontal-2026-nb.png" alt="FLISoL CABA 2026" />
         </div>
       </div>
     </section>
 
     <!-- Slide 2: Cita Karpathy 1 -->
-    <section class="slide slide-quote" data-slide="2">
+    <section class="slide slide-quote slide-quote-wide" data-slide="2">
       <div class="quote-gradient"></div>
       <blockquote class="quote">
         <p>
@@ -40,62 +41,50 @@
       </blockquote>
     </section>
 
-    <!-- Slide 3: Vibe Coding pros/contras -->
+    <!-- Slide 3: Ventajas y desventajas del Vibe Coding -->
     <section class="slide" data-slide="3">
       <header class="slide-header">
-        <h2 class="slide-title">Qué es (y qué no) el vibe coding</h2>
-        <p class="slide-subtitle">El término lo acuñó Andrej Karpathy a principios de 2025: entregarse a las vibras y aceptar lo que el agente produce sin revisarlo a fondo.</p>
+        <h2 class="slide-title">Ventajas y Desventajas</h2>
+        <p class="slide-subtitle">El valor aparece cuando querés explorar rápido. El costo aparece cuando el prototipo empieza a pedir garantías.</p>
       </header>
-      <div class="two-col">
-        <article class="card card-positive">
-          <div class="card-pill pill-good">Su valor real</div>
-          <ul class="card-list">
-            <li>Velocidad y exploración: idea → prototipo en minutos</li>
-            <li>Baja la barrera de entrada (no hace falta ser programador)</li>
-            <li>Ideal para descartables, demos y probar hipótesis</li>
-          </ul>
+      <div class="vibe-visual-grid">
+        <article class="vibe-visual-card vibe-pros">
+          <img src="img/vibe-coding-es.png" alt="Persona prototipando rápidamente con un asistente de IA y pantallas de código." />
+          <div class="vibe-visual-overlay">
+            <span class="vibe-label">Bueno</span>
+            <h3>Velocidad y acceso</h3>
+            <p>Idea a prototipo en minutos. Baja la barrera de entrada y sirve para demos, descartables y probar hipótesis.</p>
+          </div>
         </article>
-        <article class="card card-negative">
-          <div class="card-pill pill-bad">Su costo oculto</div>
-          <ul class="card-list">
-            <li>No queda registro de las decisiones que se tomaron</li>
-            <li>Aceptás código sin entenderlo: errores y vulnerabilidades que no ves</li>
-            <li>No hay un contrato contra el cual verificar lo generado</li>
-          </ul>
+        <article class="vibe-visual-card vibe-cons">
+          <img src="img/vibe-coding-desventajas.png" alt="Persona frente a código generado con advertencias, errores, rutas enredadas y señales de riesgo." />
+          <div class="vibe-visual-overlay">
+            <span class="vibe-label">No tan bueno</span>
+            <h3>Riesgo invisible</h3>
+            <p>Decisiones sin registro, código que no entendés y ningún contrato claro contra el cual verificar lo generado.</p>
+          </div>
         </article>
       </div>
-      <p class="footnote">No es un anti-patrón: es una <strong>herramienta</strong>. El problema empieza cuando la usás fuera de su rango.</p>
+      <!-- <p class="footnote">No es un anti-patrón: es una <strong>herramienta</strong>. El problema empieza cuando la usás fuera de su rango.</p> -->
     </section>
 
-    <!-- Slide 4: Cita Karpathy 2 -->
-    <section class="slide slide-quote" data-slide="4">
-      <div class="quote-gradient"></div>
-      <blockquote class="quote">
-        <p>
-          "Many people have tried to come up with a better name for this to differentiate it from vibe coding, personally my current favorite <strong>agentic engineering</strong>"
-        </p>
-        <footer>— Andrej Karpathy, Feb 4, 2026</footer>
-      </blockquote>
-      <p class="quote-takeaway">Entonces.. La velocidad aumentó; el problema ahora es el <span class="highlight">control</span>.</p>
-    </section>
-
-    <!-- Ejemplo 1: El prompt vibe -->
-    <section class="slide slide-example" data-slide="ej-1">
+     <!-- Ejemplo 1: El prompt vibe -->
+    <section class="slide slide-example slide-prompt-wide" data-slide="ej-1">
       <header class="slide-header">
-        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
-        <h2 class="slide-title">El prompt de un martes a las 5pm</h2>
+        <span class="slide-eyebrow">Ejemplo · Cupón</span>
+        <h2 class="slide-title">El prompt de un martes a las 17hs</h2>
       </header>
       <div class="code-block code-prompt">Estoy armando el checkout de un e-commerce.
 Necesito una función JS: <span class="tok-fn">applyCoupon</span>(cartTotal, coupon)
 que devuelva el total con el descuento aplicado.
-El cupón puede ser por porcentaje o por monto fijo.
-<span class="prompt-hl">Hacelo simple, después lo refino.</span></div>
+El cupón puede ser por porcentaje o por monto fijo.</div>
+      <blockquote class="prompt-quote">Hacelo simple, después lo refino.</blockquote>
     </section>
 
     <!-- Ejemplo 2: Lo que devuelve el agente -->
-    <section class="slide slide-example" data-slide="ej-2">
+    <section class="slide slide-example slide-code-wide" data-slide="ej-2">
       <header class="slide-header">
-        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <span class="slide-eyebrow">Ejemplo · Cupón</span>
         <h2 class="slide-title">Lo que el agente devuelve</h2>
       </header>
       <div class="code-stack">
@@ -113,9 +102,9 @@ El cupón puede ser por porcentaje o por monto fijo.
     </section>
 
     <!-- Ejemplo 3: Tres maneras de romperlo -->
-    <section class="slide slide-example" data-slide="ej-3">
+    <section class="slide slide-example slide-breaks-wide" data-slide="ej-3">
       <header class="slide-header">
-        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
+        <span class="slide-eyebrow">Ejemplo · Cupón</span>
         <h2 class="slide-title">Tres maneras de romperlo</h2>
       </header>
       <div class="roturas">
@@ -131,7 +120,8 @@ El cupón puede ser por porcentaje o por monto fijo.
           <div class="rotura-num">2</div>
           <div class="rotura-body">
             <h3>Cupón inmortal</h3>
-            <div class="code-block"><span class="tok-com">// La función no chequea fecha. Un cupón de Black Friday</span>
+            <div class="code-block"><span class="tok-com">// La función no chequea fecha.</span>
+<span class="tok-com">// Un cupón de Black Friday</span>
 <span class="tok-com">// sigue funcionando en marzo.</span></div>
             <em class="rotura-quote">Nunca dije que los cupones venzan.</em>
           </div>
@@ -150,13 +140,33 @@ El cupón puede ser por porcentaje o por monto fijo.
       </div>
     </section>
 
-    <!-- Ejemplo 4: Lo mismo, pero spec-driven -->
-    <section class="slide slide-example" data-slide="ej-4">
+    <!-- Conclusión de los ejemplos -->
+    <section class="slide slide-example-conclusion" data-slide="ej-conclusion">
+      <img class="conclusion-image" src="img/ejemplos-conclusion.png" alt="Puente de prototipo generado por IA que se rompe antes de llegar a una plataforma verificada con tests y contratos." />
+      <div class="conclusion-shade"></div>
+      <div class="conclusion-copy">
+        <span class="slide-eyebrow">Conclusión</span>
+        <h2>El agente no falló: faltaba el contrato</h2>
+        <p>Total mínimo, vencimiento y acumulación no son bugs. Son reglas que nunca existieron para verificar.</p>
+      </div>
+    </section>
+
+    <!-- Ejemplo 4: Contrato en Markdown -->
+    <section class="slide slide-example slide-markdown-contract" data-slide="ej-4">
       <header class="slide-header">
-        <span class="slide-eyebrow">Ejemplo · applyCoupon</span>
-        <h2 class="slide-title">Lo mismo, pero spec-driven</h2>
+        <span class="slide-eyebrow">Ejemplo · Cupón</span>
+        <h2 class="slide-title">El contrato es un archivo Markdown</h2>
+        <p class="slide-subtitle">La spec no vive en el chat: queda versionada, revisable y ejecutable como referencia para el agente.</p>
       </header>
-      <div class="code-block code-spec"><span class="md-h1"># Feature: Aplicar cupón al carrito</span>
+      <div class="contract-layout">
+        <div class="contract-copy">
+          <p>Un archivo <strong>.md</strong> alcanza para convertir intención en reglas verificables.</p>
+          <p>El agente deja de adivinar y empieza a implementar contra un contrato concreto.</p>
+          <div class="contract-file">specs/checkout/apply-coupon.md</div>
+        </div>
+        <div class="contract-file-card">
+          <div class="file-tab">apply-coupon.md</div>
+          <div class="code-block code-spec"><span class="md-h1"># Feature: Aplicar cupón al carrito</span>
 
 <span class="md-h2">## Reglas</span>
 - Tipos: PERCENTAGE, FIXED_AMOUNT
@@ -172,70 +182,130 @@ El cupón puede ser por porcentaje o por monto fijo.
 - Carrito $30  + cupón fijo $50 <span class="md-arrow">→</span> total $0.00 (no negativo)
 - Cupón vencido                  <span class="md-arrow">→</span> error <span class="md-err">VOUCHER_EXPIRED</span>
 - Usuario ya usó el cupón        <span class="md-arrow">→</span> error <span class="md-err">VOUCHER_ALREADY_USED</span></div>
+        </div>
+      </div>
+    </section>    
+
+     <!-- Slide 4: Cita Karpathy 2 -->
+    <section class="slide slide-quote slide-quote-wide" data-slide="4">
+      <div class="quote-gradient"></div>
+      <blockquote class="quote">
+        <p>
+          "Many people have tried to come up with a better name for this to differentiate it from vibe coding, personally my current favorite <strong>agentic engineering</strong>"
+        </p>
+        <footer>— Andrej Karpathy, Feb 4, 2026</footer>
+      </blockquote>
+      <p class="quote-takeaway">Entonces.. La velocidad aumentó; el problema ahora es el <span class="highlight">control</span>.</p>
     </section>
 
-    <!-- Slide nuevo: El muro -->
-    <section class="slide" data-slide="muro">
+   <!-- Slide 8: Spec Driven Development -->
+    <section class="slide slide-sdd-visual" data-slide="8">
+      <img class="sdd-image" src="img/spec-driven-development.png" alt="Una especificación central guía a un agente de IA, módulos de código y verificaciones hacia una aplicación validada." />
+      <div class="sdd-shade"></div>
+      <div class="sdd-copy">
+        <span class="slide-eyebrow">Spec Driven Development</span>
+        <h2>Desarrollar contra una especificación</h2>
+        <p>SDD es usar una spec como contrato verificable: define qué debe pasar, qué límites existen y cómo saber si el resultado está bien.</p>
+        <ul class="sdd-points">
+          <li><strong>Antes:</strong> intención, comportamiento y alcance.</li>
+          <li><strong>Durante:</strong> el agente implementa guiado por la spec.</li>
+          <li><strong>Después:</strong> se verifica contra criterios explícitos.</li>
+        </ul>
+        <div class="sdd-steps" aria-label="Flujo de Spec Driven Development">
+          <span>Intento</span>
+          <span>Spec</span>
+          <span>Tests</span>
+          <span>Código</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejemplo 5: Código fuente generado contra la spec -->
+    <section class="slide slide-source-implementation" data-slide="ej-source">
       <header class="slide-header">
-        <h2 class="slide-title">El muro</h2>
-        <p class="slide-subtitle">El vibe coding deja de ser confiable pasada cierta complejidad: el agente empieza a adivinar requisitos que nunca enunciaste.</p>
+        <span class="slide-eyebrow">Ejemplo · Código fuente</span>
+        <h2 class="slide-title">La IA implementa contra el contrato</h2>
+        <p class="slide-subtitle">El resultado ya no es el happy path: el código refleja reglas, errores y bordes definidos en la spec.</p>
       </header>
-      <div class="wall-stat">
-        <span class="num">~500</span>
-        <span class="num-label">líneas es el umbral que se suele citar.<br />No es un límite exacto: es donde lo implícito se acumula y empieza a romper.</span>
+      <div class="source-layout">
+        <div class="source-file-card">
+          <div class="file-tab">applyCoupon.js</div>
+          <div class="code-block code-source"><span class="tok-key">const</span> ERR <span class="tok-op">=</span> {
+  expired: <span class="tok-str">'VOUCHER_EXPIRED'</span>,
+  alreadyUsed: <span class="tok-str">'VOUCHER_ALREADY_USED'</span>,
+  multiple: <span class="tok-str">'ONLY_ONE_COUPON_ALLOWED'</span>
+};
+
+<span class="tok-key">function</span> <span class="tok-fn">applyCoupon</span>(cart, coupon, ctx) {
+  <span class="tok-key">if</span> (cart.<span class="tok-prop">activeCouponId</span> <span class="tok-op">&amp;&amp;</span> cart.<span class="tok-prop">activeCouponId</span> <span class="tok-op">!==</span> coupon.<span class="tok-prop">id</span>)
+    <span class="tok-key">throw</span> <span class="tok-fn">domainError</span>(ERR.<span class="tok-prop">multiple</span>);
+
+  <span class="tok-key">if</span> (<span class="tok-key">new</span> <span class="tok-fn">Date</span>(coupon.<span class="tok-prop">expiresAt</span>) <span class="tok-op">&lt;</span> ctx.<span class="tok-prop">now</span>)
+    <span class="tok-key">throw</span> <span class="tok-fn">domainError</span>(ERR.<span class="tok-prop">expired</span>);
+
+  <span class="tok-key">if</span> (ctx.<span class="tok-prop">usesByUser</span>.<span class="tok-fn">get</span>(coupon.<span class="tok-prop">id</span>) <span class="tok-op">&gt;=</span> coupon.<span class="tok-prop">limitPerUser</span>)
+    <span class="tok-key">throw</span> <span class="tok-fn">domainError</span>(ERR.<span class="tok-prop">alreadyUsed</span>);
+
+  <span class="tok-key">const</span> subtotal <span class="tok-op">=</span> <span class="tok-fn">money</span>(cart.<span class="tok-prop">total</span>);
+  <span class="tok-key">const</span> discount <span class="tok-op">=</span> coupon.<span class="tok-prop">type</span> <span class="tok-op">===</span> <span class="tok-str">'PERCENTAGE'</span>
+    <span class="tok-op">?</span> subtotal <span class="tok-op">*</span> coupon.<span class="tok-prop">value</span> <span class="tok-op">/</span> <span class="tok-num">100</span>
+    <span class="tok-op">:</span> coupon.<span class="tok-prop">value</span>;
+
+  <span class="tok-key">return</span> <span class="tok-fn">round2</span>(Math.<span class="tok-fn">max</span>(<span class="tok-num">0</span>, subtotal <span class="tok-op">-</span> discount));
+}</div>
+        </div>
+        <div class="source-takeaways">
+          <div>
+            <strong>Ya no adivina</strong>
+            <span>Lee reglas explícitas: vencimiento, uso por usuario y cupón único.</span>
+          </div>
+          <div>
+            <strong>Falla con intención</strong>
+            <span>Devuelve errores de dominio, no resultados silenciosamente incorrectos.</span>
+          </div>
+          <div>
+            <strong>Protege los bordes</strong>
+            <span>El total nunca baja de cero y el redondeo queda centralizado.</span>
+          </div>
+        </div>
       </div>
-      <div class="three-col">
-        <article class="card card-dark">
-          <span class="card-num">1</span>
-          <h3 class="card-title">Requisitos implícitos</h3>
-          <p>El agente inventa las decisiones que no tomaste: bordes, validaciones, reglas de negocio. Como en <em>applyCoupon</em>.</p>
-        </article>
-        <article class="card card-dark">
-          <span class="card-num">2</span>
-          <h3 class="card-title">Deriva de contexto</h3>
-          <p>Entre sesiones el contexto se contamina y se pierde. Lo que "sabía" ayer hoy ya no está, y las decisiones cambian sin avisar.</p>
-        </article>
-        <article class="card card-dark">
-          <span class="card-num">3</span>
-          <h3 class="card-title">Sin contrato</h3>
-          <p>No hay una fuente de verdad contra la cual verificar. "Parece andar" es lo único que podés comprobar.</p>
-        </article>
-      </div>
-      <blockquote class="fail-quote">
-        La mayor parte del tiempo no estaba arreglando bugs: estaba arreglando decisiones poco claras que nunca tomé de forma explícita.
-        <span class="src">— parafraseando a un dev sobre vibe coding</span>
-      </blockquote>
     </section>
 
     <!-- Slide 5: Espectro de estructura -->
-    <section class="slide" data-slide="5">
+    <section class="slide slide-spectrum" data-slide="5">
       <header class="slide-header">
         <h2 class="slide-title">Espectro de estructura</h2>
         <p class="slide-subtitle">No hay uno correcto, depende del contexto</p>
       </header>
-      <div class="spectrum">
-        <div class="spectrum-step">
-          <h3>Vibe Coding</h3>
-          <div class="spectrum-dot"></div>
-          <p>Velocidad máxima, control mínimo</p>
+      <div class="spectrum-visual">
+        <div class="spectrum-axis">
+          <span>Exploración</span>
+          <span>Producción</span>
         </div>
-        <div class="spectrum-arrow">→</div>
-        <div class="spectrum-step">
-          <h3>Plan → Build</h3>
-          <div class="spectrum-dot"></div>
-          <p>Buen balance para trabajo individual</p>
+        <div class="spectrum-rail" aria-hidden="true">
+          <div class="spectrum-marker m1"></div>
+          <div class="spectrum-marker m2"></div>
+          <div class="spectrum-marker m3"></div>
         </div>
-        <div class="spectrum-arrow">→</div>
-        <div class="spectrum-step">
-          <h3>Plan → Build + SDD</h3>
-          <div class="spectrum-dot"></div>
-          <p>Mejora sobre procesos de implementación y uso de IA</p>
-        </div>
-        <div class="spectrum-arrow">→</div>
-        <div class="spectrum-step">
-          <h3>Plan → Build + OpenSpec</h3>
-          <div class="spectrum-dot"></div>
-          <p>Más control / más trazabilidad</p>
+        <div class="spectrum-grid">
+          <article class="spectrum-card">
+            <span class="spectrum-kicker">01</span>
+            <h3>Vibe Coding</h3>
+            <p>Velocidad máxima para probar ideas, demos y descartables.</p>
+            <strong>Control mínimo</strong>
+          </article>
+          <article class="spectrum-card featured">
+            <span class="spectrum-kicker">02</span>
+            <h3>Plan → Build</h3>
+            <p>Separás pensamiento de ejecución. Buen balance para trabajo individual.</p>
+            <strong>Control operativo</strong>
+          </article>
+          <article class="spectrum-card">
+            <span class="spectrum-kicker">03</span>
+            <h3>Plan → Build + SDD</h3>
+            <p>La implementación queda guiada por specs, criterios y verificación.</p>
+            <strong>Control trazable</strong>
+          </article>
         </div>
       </div>
     </section>
@@ -245,14 +315,14 @@ El cupón puede ser por porcentaje o por monto fijo.
       <div class="split">
         <div class="split-left">
           <h2 class="slide-title">OpenCode</h2>
-          <p class="slide-subtitle">Agente de IA para desarrollo de software</p>
+          <p class="slide-subtitle">Agente de terminal · open source · multimodelo</p>
           <ul class="bullets">
-            <li>Agente para trabajar sobre código real</li>
-            <li>Lee, propone, edita y ejecuta</li>
-            <li>Pensado para desarrollo sobre proyectos existentes</li>
+            <li>Corre en la terminal: lee archivos, edita código y ejecuta comandos</li>
+            <li>Soporta Claude, GPT-4o, Gemini y más — vos elegís el modelo</li>
+            <li>Entiende contexto del proyecto: specs, reglas y convenciones</li>
+            <li>Pensado para trabajar sobre código real, no desde cero</li>
           </ul>
-          <p class="note">Es agnóstico del modelo/proveedor de IA que uses</p>
-          <a class="link" href="https://opencode.ai/" target="_blank" rel="noopener">https://opencode.ai/</a>
+          <a class="link" href="https://opencode.ai/" target="_blank" rel="noopener">https://opencode.ai</a>
         </div>
         <div class="split-right">
           <div class="terminal">
@@ -262,25 +332,20 @@ El cupón puede ser por porcentaje o por monto fijo.
               <span class="dot green"></span>
               <span class="terminal-title">opencode</span>
             </div>
-            <pre class="terminal-body"># Change button color to danger in settings.tsx
-<span class="cmd">›</span> /share
+            <pre class="terminal-body"># Implementar según spec: coupon.spec.md
+<span class="cmd">›</span> Aplicá los criterios definidos en la spec
 
-<span class="ai">Perfect! I can see that the Button component supports a "danger" variant.
-Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</span>
+<span class="ai">Leyendo coupon.spec.md... encontré 3 criterios de aceptación.
+Voy a aplicar el primero: el resultado nunca puede ser negativo.</span>
 
-<span class="diff-file">Edit packages/frontend/src/containers/Settings.tsx</span>
+<span class="diff-file">Edit src/coupon.ts</span>
 
-  &lt;Button
-    type="submit"
-<span class="diff-minus">-   variant="primary"</span>
-<span class="diff-plus">+   variant="danger"</span>
-    loading={isLoading}
-    disabled={units === ""}
-  &gt;
-    Purchase
-  &lt;/Button&gt;
+  function applyCoupon(cartTotal, coupon) {
+<span class="diff-minus">-   return cartTotal - coupon.value;</span>
+<span class="diff-plus">+   return Math.max(0, cartTotal - coupon.value);</span>
+  }
 
-<span class="ai">The button color has been changed to danger in Settings.tsx.</span>
+<span class="ai">✓ Criterio satisfecho: total nunca negativo.</span>
 
 <span class="cmd">›</span> █</pre>
           </div>
@@ -289,167 +354,38 @@ Now I'll change the button variant from "primary" to "danger" in Settings.tsx.</
     </section>
 
     <!-- Slide 7: Modo plan y build -->
-    <section class="slide" data-slide="7">
-      <header class="slide-header center">
-        <h2 class="slide-title">Modo plan y build</h2>
-      </header>
-      <div class="two-col">
-        <article class="card card-dark">
-          <h3 class="card-title">Plan = pensar sin tocar código</h3>
-          <p>Pensado para analizar, proponer cambios y armar un plan sin modificar el código fuente.</p>
-        </article>
-        <article class="card card-dark">
-          <h3 class="card-title">Build = ejecutar cambios reales</h3>
-          <p>Modo de implementación. Tiene las herramientas habilitadas para editar archivos, ejecutar comandos y hacer trabajo de desarrollo real sobre el proyecto.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Slide 8: Spec Driven Development -->
-    <section class="slide" data-slide="8">
+    <section class="slide slide-plan-build" data-slide="7">
       <header class="slide-header">
-        <h2 class="slide-title">Spec Driven Development</h2>
-        <p class="slide-subtitle">Definís comportamiento, restricciones y criterios de aceptación <em>antes</em>; el agente implementa contra ese contrato. Martin Fowler y ThoughtWorks ya lo documentan: pasó de metodología emergente a casi estándar de industria.</p>
+        <h2 class="slide-title">Modo Plan y Build</h2>
+        <p class="slide-subtitle">Separar el pensamiento de la ejecución</p>
       </header>
-      <div class="three-col">
-        <article class="card card-glow">
-          <h3 class="card-title">La spec como fuente de verdad</h3>
-          <ul>
-            <li>Especificación clara de lo que el sistema debe hacer</li>
-            <li>Describir intención, comportamiento y alcance, y sirve para alinear a todos antes de construir</li>
-          </ul>
+      <div class="pb-grid">
+        <article class="pb-card pb-plan">
+          <span class="pb-badge">Plan</span>
+          <h3>Analizar sin tocar código</h3>
+          <p>Lee el proyecto, responde preguntas y arma un plan — sin modificar ningún archivo hasta que vos lo decidás.</p>
         </article>
-        <article class="card card-glow">
-          <h3 class="card-title">Implementar y verificar contra la spec</h3>
-          <ul>
-            <li>Guía la implementación y también para verificar si lo construido responde a lo pedido</li>
-            <li>El equipo escribe especificaciones claras del comportamiento esperado y luego genera, implementa o verifica código contra esas especificaciones</li>
-          </ul>
+        <article class="pb-card pb-build">
+          <span class="pb-badge">Build</span>
+          <h3>Ejecutar cambios reales</h3>
+          <p>Tiene acceso a todas las herramientas: edita archivos, ejecuta comandos y aplica los cambios de principio a fin.</p>
         </article>
-        <article class="card card-glow">
-          <h3 class="card-title">La spec como documento vivo</h3>
-          <ul>
-            <li>Una buena spec no se escribe una vez y se momifica</li>
-            <li>Se puede modificar, extender o reducir su alcance. Si la spec es muy grande posiblemente deba ser reducida en varias specs</li>
-            <li>Matiz: las specs estáticas se vuelven caras y derivan; las vivas se sincronizan con el código</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Slide nuevo: De autocompletado a ingeniero -->
-    <section class="slide" data-slide="ingeniero">
-      <header class="slide-header">
-        <h2 class="slide-title">De autocompletado a ingeniero</h2>
-        <p class="slide-subtitle">El truco conceptual de SDD: dejás de pedirle <em>qué tipear</em> y empezás a pedirle <em>qué comportamiento garantizar</em>.</p>
-      </header>
-      <div class="compare">
-        <div class="compare-col">
-          <span class="compare-label bad">⚙️ Instrucción técnica (vaga)</span>
-          <div class="code-block">Usá PostgreSQL para guardar
-la actividad de los usuarios.</div>
-          <p class="compare-note">Describe la implementación, no el resultado. El agente completa los huecos adivinando. No hay nada que verificar.</p>
+        <div class="pb-screenshot">
+          <img src="img/opencode-plan.svg" alt="OpenCode modo Plan" />
         </div>
-        <div class="compare-col">
-          <span class="compare-label good">🎯 Criterio conductual (verificable)</span>
-          <div class="code-block">Como admin puedo consultar la
-actividad de usuarios de los
-últimos 90 días y recibir
-resultados en menos de 2 s.</div>
-          <p class="compare-note">Define comportamiento observable y restricciones. Es un contrato: o se cumple, o no. La base de datos es un detalle.</p>
+        <div class="pb-screenshot">
+          <img src="img/opencode-build.svg" alt="OpenCode modo Build" />
         </div>
       </div>
-    </section>
-
-    <!-- Slide nuevo: Workflow de 3 fases -->
-    <section class="slide" data-slide="fases">
-      <header class="slide-header">
-        <h2 class="slide-title">El workflow de 3 fases</h2>
-        <p class="slide-subtitle">Las herramientas le ponen nombres distintos, pero la estructura es siempre la misma. Un modelo mental portable, independiente de la herramienta.</p>
-      </header>
-      <div class="phases">
-        <article class="phase">
-          <span class="phase-step">FASE 1</span>
-          <h3>Definir el qué</h3>
-          <div class="phase-names">
-            <span class="phase-name"><b>Requirements</b><span class="tool">AWS Kiro</span></span>
-            <span class="phase-name"><b>Specify</b><span class="tool">GitHub Spec Kit</span></span>
-          </div>
-          <p class="phase-foot">Comportamiento, restricciones y criterios de aceptación. Existe notación formal para esto (EARS).</p>
-        </article>
-        <article class="phase">
-          <span class="phase-step">FASE 2</span>
-          <h3>Diseñar el cómo</h3>
-          <div class="phase-names">
-            <span class="phase-name"><b>Design</b><span class="tool">AWS Kiro</span></span>
-            <span class="phase-name"><b>Plan</b><span class="tool">GitHub Spec Kit</span></span>
-          </div>
-          <p class="phase-foot">Arquitectura, modelo de datos y decisiones técnicas, derivadas de la spec.</p>
-        </article>
-        <article class="phase">
-          <span class="phase-step">FASE 3</span>
-          <h3>Partir en tareas</h3>
-          <div class="phase-names">
-            <span class="phase-name"><b>Tasks</b><span class="tool">AWS Kiro</span></span>
-            <span class="phase-name"><b>Tasks</b><span class="tool">GitHub Spec Kit</span></span>
-          </div>
-          <p class="phase-foot">Cambios chicos y revisables que el agente implementa y verifica contra el contrato.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Slide 9: Implementación SDD -->
-    <section class="slide" data-slide="9">
-      <header class="slide-header center">
-        <h2 class="slide-title">Implementación SDD</h2>
-      </header>
-      <ul class="check-list">
-        <li><strong>Escribir la spec:</strong> alcance, comportamiento esperado, restricciones y criterios de aceptación</li>
-        <li><strong>Documentar el diseño:</strong> arquitectura, modelo de datos, APIs, impacto y riesgos</li>
-        <li><strong>Partir el trabajo en tareas chicas</strong> y las implementás en cambios pequeños y revisables</li>
-        <li><strong>Registrar decisiones importantes</strong> en ADRs (Architecture Decision Record)</li>
-        <li><strong>Revisar contra la spec,</strong> no solo contra el código</li>
-        <li><strong>Actualizar la spec</strong> después de su implementación</li>
-      </ul>
-      <p class="callout">SDD busca trazabilidad y precisión al construir con IA</p>
-    </section>
-
-    <!-- Slide nuevo: El ecosistema de herramientas -->
-    <section class="slide" data-slide="ecosistema">
-      <header class="slide-header">
-        <h2 class="slide-title">El ecosistema</h2>
-        <p class="slide-subtitle">No hay una herramienta única: hay un espectro, desde un markdown hasta un IDE dedicado.</p>
-      </header>
-      <div class="tool-axis">
-        <span>Liviano · un archivo</span>
-        <span class="arrow"></span>
-        <span>Pesado · IDE dedicado</span>
-      </div>
-      <div class="three-col">
-        <article class="card card-glow">
-          <h3 class="card-title">CLAUDE.md</h3>
-          <ul>
-            <li>Un simple markdown ya funciona como spec liviana</li>
-            <li>Cero setup: contexto y reglas viven con el repo</li>
-          </ul>
-          <p class="card-foot">Punto de entrada más bajo</p>
-        </article>
-        <article class="card card-glow">
-          <h3 class="card-title">GitHub Spec Kit</h3>
-          <ul>
-            <li>Open source (MIT) · <span class="star">★</span> +90k estrellas</li>
-            <li>Funciona con 30+ agentes, incluido Claude Code</li>
-          </ul>
-          <p class="card-foot">Flujo Specify → Plan → Tasks</p>
-        </article>
-        <article class="card card-glow">
-          <h3 class="card-title">AWS Kiro</h3>
-          <ul>
-            <li>IDE construido sobre Code OSS</li>
-            <li>Sistema de <em>hooks</em> para automatizar el flujo</li>
-          </ul>
-          <p class="card-foot">Flujo Requirements → Design → Tasks</p>
-        </article>
+      <div class="pb-providers">
+        <span class="pb-providers-label">Conecta con cualquier proveedor · vos elegís el modelo</span>
+        <div class="pb-models">
+          <span class="pb-model">Claude Sonnet</span>
+          <span class="pb-model">GPT-4o</span>
+          <span class="pb-model">Gemini 2.5</span>
+          <span class="pb-model">Llama 3</span>
+          <span class="pb-model pb-model-more">+ más</span>
+        </div>
       </div>
     </section>
 
@@ -457,14 +393,28 @@ resultados en menos de 2 s.</div>
     <section class="slide" data-slide="10">
       <div class="split">
         <div class="split-left">
+          <span class="os-eyebrow">Spec-Driven Development</span>
           <h2 class="slide-title">OpenSpec</h2>
-          <p class="slide-subtitle">Framework para estructurar cambios antes de implementarlos</p>
+          <p class="slide-subtitle">Acordá <em>qué</em> vas a construir antes de escribir una sola línea de código.</p>
+
+          <div class="os-flow">
+            <span class="os-step">Proposal</span>
+            <span class="os-arrow">→</span>
+            <span class="os-step">Specs</span>
+            <span class="os-arrow">→</span>
+            <span class="os-step">Design</span>
+            <span class="os-arrow">→</span>
+            <span class="os-step">Tasks</span>
+            <span class="os-arrow">→</span>
+            <span class="os-step os-step-done">Archive</span>
+          </div>
+
           <ul class="bullets">
-            <li>Framework para organizar cambios con <em>proposal</em>, <em>specs</em>, <em>design</em> y <em>tasks</em></li>
-            <li>Convierte intención en artefactos trazables</li>
-            <li>Ayuda a trabajar con IA sin depender de prompts sueltos</li>
+            <li><em>Agree before you build:</em> humano y agente alinean el alcance antes de tocar código</li>
+            <li>Convierte la intención en <em>artefactos trazables</em>, no en prompts sueltos que se pierden</li>
+            <li>Specs en <em>markdown</em>: una fuente de verdad versionada, auditable y que vive con el repo</li>
           </ul>
-          <a class="link" href="https://openspec.dev/" target="_blank" rel="noopener">https://openspec.dev/</a>
+          <a class="link" href="https://openspec.dev/" target="_blank" rel="noopener">https://openspec.dev</a>
         </div>
         <div class="split-right">
           <div class="terminal">
@@ -474,10 +424,11 @@ resultados en menos de 2 s.</div>
               <span class="dot green"></span>
               <span class="terminal-title">openspec view</span>
             </div>
-            <pre class="terminal-body"><span class="ai">OpenSpec Dashboard</span>
+            <pre class="terminal-body"><span class="cmd">$ openspec view</span>
 
+<span class="ai">OpenSpec Dashboard</span>
 <span class="dim">────────────────────────────────────</span>
-<span class="hl">Summary:</span>
+<span class="hl">Summary</span>
   • Specifications: <b>10</b> specs, 64 requirements
   • Active Changes: <b>3</b> in progress
   • Completed Changes: <b>4</b>
@@ -485,7 +436,7 @@ resultados en menos de 2 s.</div>
 
 <span class="hl">Active Changes</span>
   ● make-validation-scope-aware    [░░░░░░] 0%
-  ● remove-diff-command            [████░░] 90%
+  ● remove-diff-command            [█████░] 90%
   ● improve-deterministic-tests    [█████░] 92%
 
 <span class="hl">Completed Changes</span>
@@ -509,30 +460,150 @@ resultados en menos de 2 s.</div>
     <section class="slide" data-slide="11">
       <header class="slide-header">
         <h2 class="slide-title">OpenSpec</h2>
+        <p class="slide-subtitle">Qué lo hace práctico para Spec-Driven Development en el día a día</p>
       </header>
-      <div class="three-col">
-        <article class="card card-glow">
-          <h3 class="card-title">Alinear antes de programar</h3>
-          <ul>
-            <li>Equipo humano y agente acuerdan qué se va a construir antes de tocar código</li>
-            <li>"Agree before you build", para que los requisitos se tengan en cuenta</li>
-          </ul>
+      <div class="three-col os-cards">
+        <article class="card card-glow os-card">
+          <div class="os-card-img">
+            <img src="img/spec-markdown.svg" alt="Specs en markdown versionadas con Git" />
+          </div>
+          <h3 class="card-title">Todo es markdown</h3>
+          <p class="os-card-text">Specs versionadas con Git, agnósticas de cualquier agente.</p>
         </article>
-        <article class="card card-glow">
-          <h3 class="card-title">Convertir la intención en artefactos explícitos</h3>
-          <ul>
-            <li>En vez de depender de prompts sueltos, el cambio se estructura con artefactos concretos: proposal, specs, design y tasks</li>
-            <li>De "pedido informal" a "trabajo trazable y ejecutable"</li>
-          </ul>
+        <article class="card card-glow os-card">
+          <div class="os-card-img">
+            <img src="img/spec-delta.svg" alt="Cambios revisados como un diff antes de implementar" />
+          </div>
+          <h3 class="card-title">Deltas revisables</h3>
+          <p class="os-card-text">Cada cambio se revisa y aprueba como un PR antes del código.</p>
         </article>
-        <article class="card card-glow">
-          <h3 class="card-title">Cerrar el ciclo con trazabilidad y fuente de verdad</h3>
-          <ul>
-            <li>El desarrollo no termina al implementar: el cambio aprobado se archiva, se integra a las specs principales y queda historial auditable (archivos markdown)</li>
-          </ul>
+        <article class="card card-glow os-card">
+          <div class="os-card-img">
+            <img src="img/spec-context.svg" alt="Las specs alimentan al agente como fuente de verdad" />
+          </div>
+          <h3 class="card-title">Contexto del agente</h3>
+          <p class="os-card-text">Las specs guían al agente y quedan como fuente de verdad.</p>
         </article>
       </div>
     </section>
+
+    <!-- Slide 9: Implementación SDD -->
+    <section class="slide slide-sdd-flow" data-slide="9">
+      <header class="slide-header center">
+        <h2 class="slide-title">Implementar SDD con OpenSpec</h2>
+        <p class="slide-subtitle">Del requerimiento al historial auditable, paso a paso</p>
+      </header>
+      <ol class="sdd-flow">
+        <li class="sdd-step">
+          <span class="sdd-num">1</span>
+          <div class="sdd-body">
+            <h3>Inicializar</h3>
+            <p>Estructura <em>openspec/</em> y deja las instrucciones del agente dentro del repo.</p>
+          </div>
+          <code class="sdd-cmd">openspec init</code>
+        </li>
+        <li class="sdd-step">
+          <span class="sdd-num">2</span>
+          <div class="sdd-body">
+            <h3>Proponer el cambio</h3>
+            <p>El agente redacta <em>proposal</em>, <em>specs</em> (deltas), <em>design</em> y <em>tasks</em>.</p>
+          </div>
+          <code class="sdd-cmd">openspec proposal</code>
+        </li>
+        <li class="sdd-step">
+          <span class="sdd-num">3</span>
+          <div class="sdd-body">
+            <h3>Validar y revisar</h3>
+            <p>Aprobás el <em>qué</em> contra la spec antes de escribir una línea de código.</p>
+          </div>
+          <code class="sdd-cmd">openspec validate</code>
+        </li>
+        <li class="sdd-step">
+          <span class="sdd-num">4</span>
+          <div class="sdd-body">
+            <h3>Implementar por tareas</h3>
+            <p>El agente ejecuta tareas chicas y revisables, marcando el progreso.</p>
+          </div>
+          <code class="sdd-cmd">tasks.md</code>
+        </li>
+        <li class="sdd-step">
+          <span class="sdd-num">5</span>
+          <div class="sdd-body">
+            <h3>Archivar</h3>
+            <p>El delta se integra a las specs principales y queda historial auditable.</p>
+          </div>
+          <code class="sdd-cmd">openspec archive</code>
+        </li>
+      </ol>
+      <p class="callout">SDD busca trazabilidad y precisión al construir con IA</p>
+    </section>
+
+    <!-- Slide: tasks.md del ejemplo del cupón -->
+    <section class="slide slide-tasks" data-slide="tasks-cupon">
+      <header class="slide-header center">
+        <h2 class="slide-title">El plan se vuelve <em>tasks.md</em></h2>
+        <p class="slide-subtitle">Ejemplo: aplicar un cupón de descuento al carrito</p>
+      </header>
+      <div class="terminal file-window">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">openspec/changes/apply-coupon/tasks.md</span>
+        </div>
+        <pre class="terminal-body md"><span class="md-h1"># Aplicar cupón de descuento</span>
+<span class="md-quote">2 / 6 tareas · 33% completo</span>
+
+<span class="md-h2">## 1. Clampear el resultado a 0</span>
+<span class="md-task done"><span class="mark">✓</span> 1.1 Devolver Math.max(0, cartTotal − coupon.value)</span>
+<span class="md-task done"><span class="mark">✓</span> 1.2 Test: un descuento mayor al total no da negativo</span>
+
+<span class="md-h2">## 2. Validar la expiración del cupón</span>
+<span class="md-task todo"><span class="mark">☐</span> 2.1 Rechazar cupones con expiresAt &lt; hoy</span>
+<span class="md-task todo"><span class="mark">☐</span> 2.2 Test: un cupón vencido lanza error</span>
+
+<span class="md-h2">## 3. Marcar el cupón como usado</span>
+<span class="md-task todo"><span class="mark">☐</span> 3.1 Setear coupon.usedAt al aplicarlo</span>
+<span class="md-task todo"><span class="mark">☐</span> 3.2 Impedir reutilizar un cupón ya usado</span></pre>
+      </div>
+    </section>
+
+    <!-- Slide nuevo: El ecosistema de herramientas -->
+    <section class="slide slide-combo" data-slide="ecosistema">
+      <header class="slide-header center">
+        <h2 class="slide-title">OpenCode <span class="combo-plus">+</span> OpenSpec</h2>
+      </header>
+      <div class="combo">
+        <article class="card card-glow combo-card">
+          <span class="combo-role">El motor</span>
+          <div class="combo-img">
+            <img src="img/combo-engine.svg" alt="Motor que ejecuta: planifica y aplica los cambios" />
+          </div>
+          <h3 class="card-title">OpenCode</h3>
+          <p class="combo-text">Planifica y ejecuta los cambios con cualquier modelo.</p>
+        </article>
+        <span class="combo-op">+</span>
+        <article class="card card-glow combo-card">
+          <span class="combo-role">El método</span>
+          <div class="combo-img">
+            <img src="img/combo-method.svg" alt="Método: specs estructuradas y revisadas antes de codear" />
+          </div>
+          <h3 class="card-title">OpenSpec</h3>
+          <p class="combo-text">Estructura el cambio en specs trazables antes del código.</p>
+        </article>
+        <span class="combo-op">=</span>
+        <article class="card combo-card combo-result">
+          <span class="combo-role">El resultado</span>
+          <div class="combo-img">
+            <img src="img/combo-result.svg" alt="Resultado profesional: cambios verificados y auditables" />
+          </div>
+          <h3 class="card-title">Desarrollo profesional</h3>
+          <p class="combo-text">Velocidad de la IA con rigor de ingeniería.</p>
+        </article>
+      </div>
+    </section>
+
+    
 
     <!-- Slide 12: Cierre -->
     <section class="slide slide-closing" data-slide="12">
@@ -542,13 +613,33 @@ resultados en menos de 2 s.</div>
         <div class="ribbon r3"></div>
       </div>
       <div class="closing-content">
-        <h2 class="closing-headline">No alcanza con pedir bien: hay que construir con <span class="accent">trazabilidad</span></h2>
-        <p class="closing-tradeoff">El trade-off es honesto: <strong>más trabajo al principio</strong> a cambio de <strong>menos sorpresas después</strong>. No vale la pena para un script rápido; es esencial para algo que va a producción. La clave es saber cuándo usar cada modo.</p>
-        <h3 class="closing-thanks">¡Gracias!</h3>
-        <div class="contact">
-          <strong>Contacto</strong>
-          <a href="mailto:jonathanvgms@gmail.com">jonathanvgms@gmail.com</a>
-          <a href="http://linkedin.com/in/jvelazquez27/" target="_blank" rel="noopener">linkedin.com/in/jvelazquez27/</a>
+        <div class="closing-main">
+          <span class="closing-eyebrow">En una frase</span>
+          <h2 class="closing-headline">Del <span class="accent">vibe</span> a la <span class="accent">spec</span></h2>
+          <p class="closing-takeaway">Dejá que la IA vaya rápido. La spec marca el rumbo y deja rastro.</p>
+          <h3 class="closing-thanks">¡Gracias!</h3>
+          <div class="contact">
+            <!-- Completá con tus datos -->
+            <a class="contact-item" href="mailto:tu-email@ejemplo.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+              <span>jonathanvgms@gmail.com</span>
+            </a>
+            <a class="contact-item" href="https://github.com/tu-usuario" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.2 3.44 9.6 8.21 11.16.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.72-4.04-1.6-4.04-1.6-.55-1.38-1.34-1.75-1.34-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.57-2.67-.3-5.47-1.31-5.47-5.84 0-1.29.47-2.34 1.24-3.17-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.21.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.28-1.53 3.29-1.21 3.29-1.21.66 1.66.25 2.88.12 3.18.77.83 1.23 1.88 1.23 3.17 0 4.54-2.81 5.54-5.49 5.83.43.36.81 1.08.81 2.18 0 1.57-.01 2.84-.01 3.23 0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/>
+              </svg>
+              <span>github.com/jonathanvgms</span>
+            </a>
+          </div>
+        </div>
+        <div class="closing-qr">
+          <div class="qr-card">
+            <img src="img/qr-presentacion.svg" alt="Código QR de la presentación: flisol2026.vercel.app" />
+          </div>
+          <span class="qr-label">flisol2026.vercel.app</span>
         </div>
       </div>
     </section>

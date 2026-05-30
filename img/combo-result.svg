@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="res-sh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2bd49a"/>
+      <stop offset="1" stop-color="#159e72"/>
+    </linearGradient>
+    <filter id="res-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#6ee7b7" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- shield (quality / professional) -->
+  <g filter="url(#res-glow)">
+    <path d="M200 44 L300 80 C300 150, 280 210, 200 252 C120 210, 100 150, 100 80 Z"
+          fill="url(#res-sh)" stroke="#aef5d6" stroke-width="3"/>
+  </g>
+  <!-- inner check -->
+  <path d="M158 142 l28 30 l56 -68" fill="none" stroke="#0c2a20" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+  <path d="M158 138 l28 30 l56 -68" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- sparkles -->
+  <g fill="#b8a3ff">
+    <path d="M86 70 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 Z"/>
+    <path d="M320 60 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 Z"/>
+    <path d="M312 196 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3 Z" fill="#6ee7b7"/>
+  </g>
+</svg>

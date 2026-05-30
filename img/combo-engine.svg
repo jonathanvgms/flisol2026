@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="eng-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d5cf0"/>
+      <stop offset="1" stop-color="#5e3fb8"/>
+    </linearGradient>
+    <filter id="eng-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#9d7cf5" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- gear -->
+  <g filter="url(#eng-glow)">
+    <g fill="url(#eng-g)">
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(0 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(45 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(90 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(135 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(180 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(225 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(270 200 150)"/>
+      <rect x="186" y="52" width="28" height="36" rx="5" transform="rotate(315 200 150)"/>
+    </g>
+    <circle cx="200" cy="150" r="72" fill="url(#eng-g)"/>
+    <circle cx="200" cy="150" r="52" fill="#150c30"/>
+  </g>
+
+  <!-- code brackets </> -->
+  <g fill="none" stroke="#b8a3ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M186 132 L172 150 L186 168"/>
+    <path d="M214 132 L228 150 L214 168"/>
+  </g>
+  <line x1="206" y1="128" x2="194" y2="172" stroke="#6ee7b7" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- run badge -->
+  <g transform="translate(258,200)">
+    <circle cx="0" cy="0" r="30" fill="#150c30" stroke="#6ee7b7" stroke-width="4"/>
+    <path d="M-9 -13 L15 0 L-9 13 Z" fill="#6ee7b7"/>
+  </g>
+</svg>

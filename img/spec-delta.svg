@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="d-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1140"/>
+      <stop offset="1" stop-color="#140c2e"/>
+    </linearGradient>
+    <filter id="d-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#9d7cf5" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- diff panel -->
+  <g filter="url(#d-glow)">
+    <rect x="44" y="48" width="312" height="170" rx="16" fill="url(#d-panel)" stroke="#9d7cf5" stroke-width="2"/>
+  </g>
+  <line x1="44" y1="80" x2="356" y2="80" stroke="#2a1f4e" stroke-width="2"/>
+  <circle cx="62" cy="64" r="5" fill="#ff5f56"/>
+  <circle cx="80" cy="64" r="5" fill="#ffbd2e"/>
+  <circle cx="98" cy="64" r="5" fill="#27c93f"/>
+
+  <!-- context line -->
+  <g font-family="monospace">
+    <rect x="64" y="96" width="200" height="8" rx="4" fill="#4a4076"/>
+    <!-- removed -->
+    <rect x="44" y="116" width="312" height="22" fill="rgba(255,139,139,0.12)"/>
+    <text x="58" y="132" font-size="18" fill="#ff8b8b">−</text>
+    <rect x="80" y="123" width="160" height="8" rx="4" fill="#ff8b8b" opacity="0.8"/>
+    <!-- added -->
+    <rect x="44" y="142" width="312" height="22" fill="rgba(110,231,183,0.12)"/>
+    <text x="58" y="158" font-size="18" fill="#6ee7b7">+</text>
+    <rect x="80" y="149" width="210" height="8" rx="4" fill="#6ee7b7" opacity="0.85"/>
+    <!-- context line -->
+    <rect x="64" y="182" width="150" height="8" rx="4" fill="#4a4076"/>
+  </g>
+
+  <!-- approval check badge -->
+  <g transform="translate(300,180)">
+    <circle cx="0" cy="0" r="34" fill="#150c30" stroke="#6ee7b7" stroke-width="4"/>
+    <path d="M-16 0 l11 12 l21 -26" fill="none" stroke="#6ee7b7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
